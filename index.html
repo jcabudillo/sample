@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJMJ Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img/bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            background-color: rgba(161, 30, 12, 0.7);
+            margin-bottom: 30px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .category {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .category h2 {
+            text-align: center;
+            color: #0038A8;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .menu-container {
+            display: none; /* Initially hidden */
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .menu-item {
+            margin: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(30% - 30px);
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .description {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .price {
+            font-weight: bold;
+            color: #CE1126;
+        }
+        .logo {
+            position: center;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .about {
+            position: absolute;
+            color: white;
+            top: 20px;
+            right: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: max-height 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        .about .names {
+            display: none;
+        }
+        .about:hover .names {
+            display: block;
+        }
+        #contact {
+            margin-top: 30px;
+            color: white;
+            text-align: left;
+        }
+        #disclaimer {
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="img/logo.jpg" alt="Restaurant Logo" class="logo">
+
+    <h1>JJMJ Restaurant Menu - Mainit kapag bagong luto</h1>
+    <div class="about">
+        <p><strong>About</strong></p>
+        <div class="names">
+            <p><strong>Submitted by:</strong><br> Jxxxxxx Cxxxxxxxx,<br> Jxxxxxxx Dxxxxxxx,<br> Mxx Jxxx Mxxxxxx</p>
+        </div>
+    </div>
+    <!-- Seafood Category -->
+    <div class="category">
+        <h2 onclick="toggleMenu('seafood')">Seafood</h2>
+        <div id="seafood" class="menu-container">
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/1207107546/photo/salmon-raw-trout-red-fish-steak-with-ingredients-for-cooking-cooking-salmon-sea-food-healthy.jpg?s=1024x1024&w=is&k=20&c=doZBSN2wgQ3h6_7bN9brNeCLiDbXkO4zVbDHMzupg70=" target="_blank">
+                    <img src="img/seafood1.jpg" alt="Grilled Salmon">
+                </a>
+                <h3>Grilled Salmon</h3>
+                <p class="description">Juicy grilled salmon served with Life Insurance.</p>
+                <p class="price">Php390.00</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/469311080/photo/jumbo-shrimp-scampi-sauteeing-in-butter-and-olive-oil.jpg?s=1024x1024&w=is&k=20&c=hubOt7GiPVDHgpSEWcl3s-oHqH1d5Mv-3OIilpcsAD4=" target="_blank">
+                    <img src="img/seafood2.jpg" alt="Shrimp Scampi">
+                </a>
+                <h3>Shrimp Scampi</h3>
+                <p class="description">Shrimp sautéed in garlic and fully synthetic oil.</p>
+                <p class="price">Php399.00</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/1408117677/photo/steamed-lobster-tail.jpg?s=1024x1024&w=is&k=20&c=Fw0mBDz-SP4vXrpgjn_A9Q6bcTPIRN9G0HLGF-5Mbt0=" target="_blank">
+                    <img src="img/seafood3.jpg" alt="Lobster Tail">
+                </a>
+                <h3>Lobster Tail</h3>
+                <p class="description">Succulent lobster tail grilled to perfection.</p>
+                <p class="price">Php529.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dishes Category -->
+    <div class="category">
+        <h2 onclick="toggleMenu('main')">Main Dishes</h2>
+        <div id="main" class="menu-container">
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/587207508/photo/sliced-grilled-steak-ribeye-with-herb-butter.jpg?s=1024x1024&w=is&k=20&c=Huz6w1foEuq-U2oyHpuIhZKCcH1uf0XAmRJ5V9f5WJE=" target="_blank">
+                    <img src="img/main1.jpg" alt="Ribeye Steak">
+                </a>
+                <h3>Ribeye Steak</h3>
+                <p class="description">Tender ribeye steak grilled to your liking.</p>
+                <p class="price">Php599.99</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/506916161/photo/homemade-fettucini-aflredo-pasta.jpg?s=1024x1024&w=is&k=20&c=KvQQgiHKR8yyMzkoW2amD3RmBc0UBeyaPUd5XiuEefc=" target="_blank">
+                    <img src="img/main2.jpg" alt="Fettuccine Alfredo">
+                </a>
+                <h3>Fettuccine Alfredo</h3>
+                <p class="description">Creamy Alfredo sauce over fettuccine pasta.</p>
+                <p class="price">Php699.00</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/523256382/photo/chicken-parmesan-with-spaghetti.jpg?s=1024x1024&w=is&k=20&c=OymGDmJZSVaALz9vvP_eNK3dVXE-sUdw2koK7SY34X4=" target="_blank">
+                    <img src="img/main3.jpg" alt="Chicken Parmesan">
+                </a>
+                <h3>Chicken Parmesan</h3>
+                <p class="description">Breaded chicken breast topped with marinara sauce.</p>
+                <p class="price">Php499.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- drinks Category -->
+    <div class="category">
+        <h2 onclick="toggleMenu('drinks')">Drinks</h2>
+        <div id="drinks" class="menu-container">
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/1220337014/photo/delicious-chocolate-cake-with-chocolate-cream.jpg?s=1024x1024&w=is&k=20&c=QH7OV-Mf0-kxz2g0e-gRMBtG9D8cP-cgo1jYX-7rb3Y=" target="_blank">
+                    <img src="img/drink1.jpg" alt="Chocolate Cake">
+                </a>Mojito</h3>
+                <p class="description">Refresh Your Senses with Every Sip.</p>
+                <p class="price">Php199.00</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/151868091/photo/slices-of-cherry-cheesecake.jpg?s=1024x1024&w=is&k=20&c=kgG_f4cOGYcCF5T2O9TWsGgxsXKHQwr28z3GVcxDgIA=" target="_blank">
+                    <img src="img/drink2.jpg" alt="Cherry Cheesecake">
+                </a>
+                <h3>Lemonade</h3>
+                <p class="description">Simply perfect lemon.</p>
+                <p class="price">Php249.00</p>
+            </div>
+            <div class="menu-item">
+                <a href="https://media.istockphoto.com/id/1200126029/photo/caramel-ice-cream-in-cup-with-chocolate-syrup-and-caramel-sauce.jpg?s=1024x1024&w=is&k=20&c=KpCjpRAI6kSokfAfax5YYUnPoqAK7KOxjjBqRoL8AfY=" target="_blank">
+                    <img src="img/drink3.jpg" alt="Caramel Ice Cream">
+                </a>
+                <h3>Red Wine</h3>
+                <p class="description">Uncork the Richness.</p>
+                <p class="price">Php149.00</p>
+            </div>
+        </div>
+    </div>
+<!-- Pinoy Desserts Category -->
+<div class="category">
+    <h2 onclick="toggleMenu('desserts')">Pinoy Dessert</h2>
+    <div id="desserts" class="menu-container">
+        <div class="menu-item">
+            <a href="https://www.pinoycookingrecipes.com/recipe/ube-halaya" target="_blank">
+                <img src="img/dessert1.jpg" alt="Ube Halaya">
+            </a>
+            <h3>Ube Halaya</h3>
+            <p class="description">Creamy and sweet purple yam jam topped with grated cheese.</p>
+            <p class="price">Php80.00</p>
+        </div>
+        <div class="menu-item">
+            <a href="https://www.kawalingpinoy.com/halo-halo/" target="_blank">
+                <img src="img/dessert2.jpg" alt="Halo-halo">
+            </a>
+            <h3>Halo-halo</h3>
+            <p class="description">A refreshing mix of shaved ice, fruits, and sweet beans topped with leche flan and ube ice cream.</p>
+            <p class="price">Php69.00</p>
+        </div>
+        <div class="menu-item">
+            <a href="https://www.kawalingpinoy.com/leche-flan/" target="_blank">
+                <img src="img/dessert3.jpg" alt="Leche-Flan">
+            </a>
+            <h3>Leche Flan</h3>
+            <p class="description">Crowd-pleaser, rich, smooth, and creamy with a golden caramel topping.</p>
+            <p class="price">Php80.00</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@jjmjrestaurant.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Main Street, Food City, FC 12345</p>
+    </div>
+
+      <script>
+        function toggleMenu(category) {
+            const menuContainer = document.getElementById(category);
+            menuContainer.style.display = (menuContainer.style.display === 'flex') ? 'none' : 'flex';
+        }
+    </script>
+        <footer style="text-align: center; margin-top: 30px; color: white; background-color: rgba(0, 0, 0, 0.7); padding: 10px; border-radius: 10px;">
+            <p>Disclaimer: The information and images presented are fictional and intended solely for educational purposes in the context of web design.</p>
+        </footer>
+</body>
+</html>
